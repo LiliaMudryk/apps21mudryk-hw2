@@ -47,7 +47,7 @@ public final class ImmutableLinkedList implements ImmutableList {
 
     @Override
     public ImmutableList add(int index, Object e) {
-        return addAll(index,new Object[]{e});
+        return addAll(index, new Object[]{e});
     }
 
     @Override
@@ -176,7 +176,7 @@ public final class ImmutableLinkedList implements ImmutableList {
             return newArray;
         }
         newArray[0] = node.getValue();
-        int i=1;
+        int i = 1;
         while (node.getNext() != null) {
             node = node.getNext();
             newArray[i] = node.getValue();
