@@ -1,7 +1,5 @@
 package ua.edu.ucu.collections.immutable;
 
-import java.util.Arrays;
-import java.util.Objects;
 
 public final class ImmutableArrayList implements ImmutableList {
     private final Object[] oldArray;
@@ -30,7 +28,7 @@ public final class ImmutableArrayList implements ImmutableList {
         for (int i = 0; i < oldArray.length; i ++) {
             newArray[i] = oldArray[i];
         }
-        for (int i = oldArray.length; i < newArrayLength; i ++) {
+        for (int i = oldArray.length; i < newArrayLength; i++) {
             newArray[i] = c[i - oldArray.length];
         }
         return new ImmutableArrayList(newArray);
@@ -43,14 +41,14 @@ public final class ImmutableArrayList implements ImmutableList {
         }
         int newArrayLength = oldArray.length + c.length;
         Object[] newArray = new Object[newArrayLength];
-        for (int i = 0; i < index; i ++) {
+        for (int i = 0; i < index; i++) {
             newArray[i] = oldArray[i];
         }
-        for (int i = index; i < c.length + index; i ++) {
+        for (int i = index; i < c.length + index; i++) {
             newArray[i] = c[i - index];
         }
         int counter = 0;
-        for (int i = index + c.length; i < newArrayLength; i ++) {
+        for (int i = index + c.length; i < newArrayLength; i++) {
             newArray[i] = oldArray[index + counter];
             counter ++;
         }
@@ -72,11 +70,11 @@ public final class ImmutableArrayList implements ImmutableList {
             throw new IllegalArgumentException();
         }
         Object[] newArray = new Object[size() - 1];
-        for (int i = 0; i < index; i ++) {
+        for (int i = 0; i < index; i++) {
             newArray[i] = oldArray[i];
         }
         int counter = index + 1;
-        for (int i = index; i < size() - 1; i ++) {
+        for (int i = index; i < size() - 1; i++) {
             newArray[i] = oldArray[counter];
             counter ++;
         }
@@ -97,7 +95,7 @@ public final class ImmutableArrayList implements ImmutableList {
 
     @Override
     public int indexOf(Object e) {
-        for (int i = 0; i < size(); i ++) {
+        for (int i = 0; i < size(); i++) {
             if (oldArray[i].equals(e)) {
                 return i;
             }

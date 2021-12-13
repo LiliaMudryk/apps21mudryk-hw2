@@ -2,7 +2,6 @@ package ua.edu.ucu.collections.immutable;
 
 import java.util.Arrays;
 
-import static java.util.Collections.copy;
 
 public final class ImmutableLinkedList implements ImmutableList {
     private Node head;
@@ -68,16 +67,16 @@ public final class ImmutableLinkedList implements ImmutableList {
         }
         Object[] oldArray = toArray();
         Object[] newArray = new Object[c.length + oldArray.length];
-        for (int i = 0; i < index; i ++) {
+        for (int i = 0; i < index; i++) {
             newArray[i] = oldArray[i];
         }
-        for (int i = index; i < c.length + index; i ++) {
+        for (int i = index; i < c.length + index; i++) {
             newArray[i] = c[i - index];
         }
         int counter = 0;
-        for (int i = index + c.length; i < c.length + oldArray.length; i ++) {
+        for (int i = index + c.length; i < c.length + oldArray.length; i++) {
             newArray[i] = oldArray[index + counter];
-            counter ++;
+            counter++;
         }
         return new ImmutableLinkedList(newArray);
     }
@@ -98,13 +97,13 @@ public final class ImmutableLinkedList implements ImmutableList {
         }
         Object[] newArray = new Object[size() - 1];
         Object[] oldArray = toArray();
-        for (int i = 0; i < index; i ++) {
+        for (int i = 0; i < index; i++) {
             newArray[i] = oldArray[i];
         }
         int counter = index + 1;
-        for (int i = index; i < size() - 1; i ++) {
+        for (int i = index; i < size() - 1; i++) {
             newArray[i] = oldArray[counter];
-            counter ++;
+            counter++;
         }
         return new ImmutableLinkedList(newArray);
     }
@@ -136,7 +135,7 @@ public final class ImmutableLinkedList implements ImmutableList {
             }
             node = node.getNext();
             value = node.getValue();
-            i ++;
+            i++;
         }
         if (value == e) {
             return i;
@@ -152,10 +151,10 @@ public final class ImmutableLinkedList implements ImmutableList {
             return size;
         }
         while (node.getNext() != null) {
-            size ++;
+            size++;
             node = node.getNext();
         }
-        size ++;
+        size++;
         return size;
     }
 
@@ -181,7 +180,7 @@ public final class ImmutableLinkedList implements ImmutableList {
         while (node.getNext() != null) {
             node=node.getNext();
             newArray[i] = node.getValue();
-            i ++;
+            i++;
         }
         return newArray;
     }
