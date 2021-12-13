@@ -25,7 +25,7 @@ public final class ImmutableArrayList implements ImmutableList {
     public ImmutableList addAll(Object[] c) {
         int newArrayLength = oldArray.length + c.length;
         Object[] newArray = new Object[newArrayLength];
-        for (int i = 0; i < oldArray.length; i ++) {
+        for (int i = 0; i < oldArray.length; i++) {
             newArray[i] = oldArray[i];
         }
         for (int i = oldArray.length; i < newArrayLength; i++) {
@@ -50,7 +50,7 @@ public final class ImmutableArrayList implements ImmutableList {
         int counter = 0;
         for (int i = index + c.length; i < newArrayLength; i++) {
             newArray[i] = oldArray[index + counter];
-            counter ++;
+            counter++;
         }
         return new ImmutableArrayList(newArray);
     }
@@ -76,7 +76,7 @@ public final class ImmutableArrayList implements ImmutableList {
         int counter = index + 1;
         for (int i = index; i < size() - 1; i++) {
             newArray[i] = oldArray[counter];
-            counter ++;
+            counter++;
         }
         return new ImmutableArrayList(newArray);
     }

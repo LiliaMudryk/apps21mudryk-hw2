@@ -178,7 +178,7 @@ public final class ImmutableLinkedList implements ImmutableList {
         newArray[0] = node.getValue();
         int i=1;
         while (node.getNext() != null) {
-            node=node.getNext();
+            node = node.getNext();
             newArray[i] = node.getValue();
             i++;
         }
